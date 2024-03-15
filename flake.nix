@@ -31,32 +31,30 @@
     };
   };
 
-  outputs = { ... }@inputs:
-    {
-      overlay = final: prev: {
-        zsh-plugins = {
-          powerlevel10k = {
-            name = "powerlevel10k";
-            file = "powerlevel10k.zsh-theme";
-            src = inputs.powerlevel10k;
-          };
-          nix-shell = {
-            name = "nix-shell";
-            file = "nix-shell.plugin.zsh";
-            src = inputs.nix-shell;
-          };
-          zsh-autosuggestions = {
-            name = "zsh-autosuggestions";
-            file = "zsh-autosuggestions.plugin.zsh";
-            src = inputs.zsh-autosuggestions;
-          };
-          zsh-syntax-highlighting = {
-            name = "zsh-syntax-highlighting";
-            file = "zsh-syntax-highlighting.plugin.zsh";
-            src = inputs.zsh-syntax-highlighting;
-          };
+  outputs = {...} @ inputs: {
+    overlay = final: prev: {
+      zsh-plugins = {
+        powerlevel10k = {
+          name = "powerlevel10k";
+          file = "powerlevel10k.zsh-theme";
+          src = inputs.powerlevel10k;
+        };
+        nix-shell = {
+          name = "nix-shell";
+          file = "nix-shell.plugin.zsh";
+          src = inputs.nix-shell;
+        };
+        zsh-autosuggestions = {
+          name = "zsh-autosuggestions";
+          file = "zsh-autosuggestions.plugin.zsh";
+          src = inputs.zsh-autosuggestions;
+        };
+        zsh-syntax-highlighting = {
+          name = "zsh-syntax-highlighting";
+          file = "zsh-syntax-highlighting.plugin.zsh";
+          src = inputs.zsh-syntax-highlighting;
         };
       };
     };
+  };
 }
-
