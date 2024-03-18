@@ -16,6 +16,13 @@
       flake = false;
     };
 
+    nix-zsh-completions = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nix-zsh-completions";
+      flake = false;
+    };
+
     zsh-autosuggestions = {
       type = "github";
       owner = "zsh-users";
@@ -43,6 +50,11 @@
           name = "nix-shell";
           file = "nix-shell.plugin.zsh";
           src = inputs.nix-shell;
+        };
+        nix-zsh-completions = {
+          name = "nix-zsh-completions";
+          file = "nix-zsh-completions.plugin.zsh";
+          src = inputs.nix-zsh-completions;
         };
         zsh-autosuggestions = {
           name = "zsh-autosuggestions";
